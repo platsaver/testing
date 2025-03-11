@@ -44,61 +44,56 @@
         </div>
         <div style="clear: both;"></div>
         <h2>Contact us</h2>
-<form>
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  <br>
- 
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
- 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea>
-  <br>
- 
-  <button type="submit">Send</button>
-</form>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+            <br>
+           
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email (VD: abc@gmail.com)" required>
+            <br>
+           
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Nhập nội dung tin nhắn của bạn" required></textarea>
+            <br>
+           
+            <button type="submit">Send</button>
+          </form>          
     </div>
     <script>
         // Lấy các phần tử từ form
-const form = document.querySelector('form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
+        const form = document.querySelector('form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
 
-// Lắng nghe sự kiện submit form
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+        // Lắng nghe sự kiện submit form
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-    // Kiểm tra các trường thông tin
-    if (!nameInput.value.trim()) {
-        alert('Vui lòng nhập tên của bạn!');
-        return;
-    }
+            // Kiểm tra các trường thông tin
+            if (!nameInput.value.trim()) {
+                return;
+            }
 
-    if (!emailInput.value.trim()) {
-        alert('Vui lòng nhập địa chỉ email của bạn!');
-        return;
-    }
+            if (!emailInput.value.trim()) {
+                return;
+            }
 
-    if (!emailInput.value.endsWith('@gmail.com')) {
-        alert('Email phải có đuôi "@gmail.com"!');
-        return;
-    }
+            if (!emailInput.value.endsWith('@gmail.com')) {
+                return;
+            }
 
-    if (!messageInput.value.trim()) {
-        alert('Vui lòng nhập nội dung tin nhắn!');
-        return;
-    }
+            if (!messageInput.value.trim()) {
+                return;
+            }
 
-    // Hiển thị thông báo gửi thành công
-    alert('Tin nhắn đã được gửi thành công!');
+            // Hiển thị thông báo gửi thành công
+            alert('Tin nhắn đã được gửi thành công!');
 
-    // Reset form sau khi gửi thành công
-    form.reset();
-});
-
+            // Reset form sau khi gửi thành công
+            form.reset();
+        });
     </script>
 </body>
 </html>
